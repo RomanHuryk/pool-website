@@ -1,0 +1,311 @@
+<!-- Welcome -->
+<h3>Welcome!</h3>
+
+<!-- Statistics -->
+<div id="poolStats" class="row">
+
+    <!-- Pool Hash Rate -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-dashboard"></span>
+            </div>
+            <div class="content">
+                <div class="text">Pool Hash Rate</div>
+                <div class="value"><span id="poolHashrate"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Network Hash Rate -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-dashboard"></span>
+            </div>
+            <div class="content">
+                <div class="text">Network Hash Rate</div>
+                <div class="value"><span id="networkHashrate"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Current Effort -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-line-chart"></span>
+            </div>
+            <div class="content">
+                <div class="text">Current Effort</div>
+                <div class="value"><span id="currentEffort"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Difficulty -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-unlock-alt"></span>
+            </div>
+            <div class="content">
+                <div class="text">Difficulty</div>
+                <div class="value"><span id="networkDifficulty"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blocks Found -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-cubes"></span>
+            </div>
+            <div class="content">
+                <div class="text">Blocks Found</div>
+                <div class="value"><span id="blocksTotal"></span> <span class="smallText">(Last: <span id="poolLastBlockFound"></span>)</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Blocks Found Every -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-history"></span>
+            </div>
+            <div class="content">
+                <div class="text">Blocks Found Every</div>
+                <div class="value"><span id="blockSolvedTime"></span> <span class="smallText">(estimated)</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Blockchain Height -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-bars"></span>
+            </div>
+            <div class="content">
+                <div class="text">Blockchain Height</div>
+                <div class="value"><span id="blockchainHeight"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Last Reward -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-dollar"></span>
+            </div>
+            <div class="content">
+                <div class="text">Last Reward</div>
+                <div class="value"><span id="networkLastReward"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Connected Miners -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-group"></span>
+            </div>
+            <div class="content">
+                <div class="text">Connected Miners</div>
+                <div class="value"><span id="poolMiners"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pool Fee -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-dollar"></span>
+            </div>
+            <div class="content">
+                <div class="text">Pool Fee</div>
+                <div class="value"><span id="poolFee"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Minimum Payout -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-dollar"></span>
+            </div>
+            <div class="content">
+                <div class="text">Minimum Payout</div>
+                <div class="value"><span id="paymentsMinimum"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Payment Interval -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-clock-o"></span>
+            </div>
+            <div class="content">
+                <div class="text">Payment Interval</div>
+                <div class="value"><span id="paymentsInterval"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Last Hash --> 
+    <div class="col-sm-12">
+        <div class="hashInfo hoverExpandEffect">
+            <div class="text">Last Hash</div>
+            <div class="content clearfix">
+               <div class="value"><a id="lastHash" target="_blank"></a></div>
+               <div class="time">(<span id="networkLastBlockFound"></span>)</div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Pool Charts -->
+<div class="row">
+    <div class="col-sm-4 poolChart">
+        <h4>Hashrate</h4>
+        <div id="chartHashrate" data-chart="hashrate">
+            <div class="chart"></div>
+        </div>        
+    </div>
+    <div class="col-sm-4 poolChart">
+        <h4>Difficulty</h4>
+        <div id="chartDifficulty" data-chart="diff">
+            <div class="chart"></div>
+        </div>
+    </div>
+    <div class="col-sm-4 poolChart">        
+        <h4>Miners</h4>
+        <div id="chartWorkers" data-chart="workers">
+            <div class="chart"></div>
+        </div> 
+    </div>    
+</div>
+
+<!-- Javascript -->
+<script>
+currentPage = {
+    destroy: function(){
+        $('#networkLastBlockFound,#poolLastBlockFound').timeago('dispose');
+    },
+    update: function(){
+        $('#networkLastBlockFound').timeago('update', new Date(lastStats.network.timestamp * 1000).toISOString());
+        
+        updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
+        updateText('networkDifficulty', lastStats.network.difficulty.toString());
+        updateText('blockchainHeight', lastStats.network.height.toString());
+        updateText('networkLastReward', getReadableCoins(lastStats.network.reward, 2));
+        updateText('lastHash', lastStats.network.hash).setAttribute('href', getBlockchainUrl(lastStats.network.hash));
+
+        updateText('poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
+        updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
+        
+        if (lastStats.pool.lastBlockFound) {
+            var d = new Date(parseInt(lastStats.pool.lastBlockFound)).toISOString();
+            $('#poolLastBlockFound').timeago('update', d);
+        }
+        else {
+            $('#poolLastBlockFound').removeAttr('title').data('ts', '').update('Never');
+        }
+
+        updateText('poolMiners', lastStats.pool.miners.toString());
+
+        var totalFee = lastStats.config.fee;
+        if (Object.keys(lastStats.config.donation).length) {
+            var totalDonation = 0;
+            for(var i in lastStats.config.donation) {
+                totalDonation += lastStats.config.donation[i];
+            }
+            totalFee += totalDonation;
+        }
+        updateText('poolFee', (totalFee > 0 ? floatToString(totalFee) : '0') + '%');
+
+        updateText('paymentsInterval', getReadableTime(lastStats.config.paymentsInterval));
+        updateText('paymentsMinimum', getReadableCoins(lastStats.config.minPaymentThreshold, 2));
+
+        updateText('blockSolvedTime', getReadableTime(lastStats.network.difficulty / lastStats.pool.hashrate));
+        updateText('currentEffort', (lastStats.pool.roundHashes / lastStats.network.difficulty * 100).toFixed(1) + '%');
+    }
+};
+
+$('#networkLastBlockFound,#poolLastBlockFound').timeago();
+
+/* Pool Charts */
+var poolCharts = {
+    type: 'line',
+    width: '100%',
+    height: '120',
+    lineColor: '#03a9f4',
+    fillColor: 'rgba(3, 169, 244, .4)',
+    spotColor: null,
+    minSpotColor: null,
+    maxSpotColor: null,
+    highlightLineColor: '#236d26',
+    spotRadius: 3,
+    chartRangeMin: 0,
+    drawNormalOnTop: false,
+    tooltipFormat: '<b>{{y}}</b> &ndash; {{offset:names}}'
+};
+
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+function createCharts(data) {         
+    if (data.hasOwnProperty("charts")) {
+        var graphData = {
+            hashrate: getGraphData(data.charts.hashrate),
+            diff: getGraphData(data.charts.difficulty),
+            workers: getGraphData(data.charts.workers)
+        };
+            
+        for(var graphType in graphData) {
+            if(graphData[graphType].values.length > 1) {
+                var settings = jQuery.extend({}, poolCharts);
+                settings.tooltipValueLookups = {names: graphData[graphType].names};
+                var $chart = $('[data-chart=' + graphType + '] .chart');
+                $chart.closest('.poolChart').show();
+                $chart.sparkline(graphData[graphType].values, settings);
+            }
+        }
+    }
+}
+
+function getGraphData(rawData, fixValueToCoins) {
+    var graphData = {
+        names: [],
+        values: []
+    };
+    if(rawData) {
+        for (var i = 0, xy; xy = rawData[i]; i++) {
+            graphData.names.push(new Date(xy[0]*1000).toLocaleString());
+            graphData.values.push(fixValueToCoins ? getReadableCoins(xy[1], 4, true) : xy[1]);
+        }
+    }        
+        
+    return graphData;
+}
+
+var xhrRenderCharts;
+
+$(function(){
+    xhrRenderCharts = $.ajax({
+        url: api + '/stats',
+        cache: false,            
+        success: createCharts
+    });               
+});    
+</script>
